@@ -1,0 +1,17 @@
+@layer td-components {
+  .td-checkbox { display: inline-flex; align-items: flex-start; gap: 10px; cursor: pointer; user-select: none; }
+  .td-checkbox__native { position: absolute; opacity: 0; pointer-events: none; }
+  .td-checkbox__box { width: 18px; height: 18px; flex: 0 0 18px; margin-top: 1px; display: grid; place-items: center; border: 1px solid var(--td-color-border-strong); border-radius: 5px; background: var(--td-color-surface); color: white; transition: background var(--td-duration-fast) var(--td-ease), border-color var(--td-duration-fast) var(--td-ease); }
+  .td-checkbox__box svg { width: 13px; height: 13px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; opacity: 0; }
+  .td-checkbox__minus { width: 9px; height: 2px; border-radius: 2px; background: currentColor; display: none; }
+  .td-checkbox__native:checked + .td-checkbox__box,
+  .td-checkbox__native:indeterminate + .td-checkbox__box { background: var(--td-color-accent); border-color: var(--td-color-accent); }
+  .td-checkbox__native:checked + .td-checkbox__box svg { opacity: 1; }
+  .td-checkbox__native:indeterminate + .td-checkbox__box svg { display: none; }
+  .td-checkbox__native:indeterminate + .td-checkbox__box .td-checkbox__minus { display: block; }
+  .td-checkbox__native:focus-visible + .td-checkbox__box { outline: 2px solid var(--td-color-focus); outline-offset: 2px; }
+  .td-checkbox__native:disabled ~ * { opacity: .5; cursor: not-allowed; }
+  .td-checkbox__copy { display: grid; gap: 2px; }
+  .td-checkbox__label { font-size: 14px; font-weight: 600; color: var(--td-color-text); }
+  .td-checkbox__description { max-width: 44ch; font-size: 12px; line-height: 1.45; color: var(--td-color-text-muted); }
+}

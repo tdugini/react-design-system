@@ -1,0 +1,5 @@
+@layer td-components {
+  .td-skeleton { position: relative; overflow: hidden; border-radius: var(--td-radius-xs); background: var(--td-color-surface-subtle); }
+  .td-skeleton::after { content: ''; position: absolute; inset: 0; transform: translateX(-100%); background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--td-color-text) 7%, transparent), transparent); animation: td-shimmer 1.5s infinite; }
+  @keyframes td-shimmer { to { transform: translateX(100%); } }
+}

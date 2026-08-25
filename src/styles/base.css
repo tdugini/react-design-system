@@ -1,0 +1,39 @@
+@layer td-reset, td-base, td-components;
+
+@layer td-reset {
+  *, *::before, *::after { box-sizing: border-box; }
+
+  button, input, textarea, select { font: inherit; }
+}
+
+@layer td-base {
+  html { background: var(--td-color-bg); }
+
+  body {
+    margin: 0;
+    background: var(--td-color-bg);
+    color: var(--td-color-text);
+    font-family: var(--td-font-sans);
+    font-size: 14px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--td-color-focus);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: var(--td-color-accent-soft);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
