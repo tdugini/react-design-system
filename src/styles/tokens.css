@@ -1,0 +1,81 @@
+:root {
+  color-scheme: light;
+
+  --td-font-sans: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --td-font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+
+  --td-color-bg: #f6f6f4;
+  --td-color-surface: #ffffff;
+  --td-color-surface-raised: #ffffff;
+  --td-color-surface-subtle: #efefec;
+  --td-color-text: #171715;
+  --td-color-text-muted: #696964;
+  --td-color-text-subtle: #8a8a84;
+  --td-color-border: #d9d9d3;
+  --td-color-border-strong: #b8b8b1;
+  --td-color-accent: #205c4a;
+  --td-color-accent-hover: #174638;
+  --td-color-accent-soft: #e2eee9;
+  --td-color-danger: #9f2f2b;
+  --td-color-danger-hover: #7f2522;
+  --td-color-danger-soft: #f6e7e5;
+  --td-color-warning: #8a5a13;
+  --td-color-warning-soft: #f7edd8;
+  --td-color-success: #286846;
+  --td-color-success-soft: #e4efe8;
+  --td-color-info: #315f8c;
+  --td-color-info-soft: #e6edf5;
+  --td-color-focus: #246cdb;
+
+  --td-shadow-1: 0 1px 2px rgba(20, 20, 18, 0.06), 0 4px 12px rgba(20, 20, 18, 0.04);
+  --td-shadow-2: 0 12px 36px rgba(20, 20, 18, 0.14);
+
+  --td-radius-xs: 4px;
+  --td-radius-sm: 7px;
+  --td-radius-md: 10px;
+  --td-radius-lg: 14px;
+
+  --td-space-1: 4px;
+  --td-space-2: 8px;
+  --td-space-3: 12px;
+  --td-space-4: 16px;
+  --td-space-5: 20px;
+  --td-space-6: 24px;
+  --td-space-8: 32px;
+  --td-space-10: 40px;
+  --td-space-12: 48px;
+
+  --td-duration-fast: 120ms;
+  --td-duration-base: 180ms;
+  --td-ease: cubic-bezier(0.2, 0, 0, 1);
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  --td-color-bg: #111210;
+  --td-color-surface: #181916;
+  --td-color-surface-raised: #20211d;
+  --td-color-surface-subtle: #24251f;
+  --td-color-text: #f1f1ec;
+  --td-color-text-muted: #aaa9a1;
+  --td-color-text-subtle: #817f78;
+  --td-color-border: #34352f;
+  --td-color-border-strong: #505149;
+  --td-color-accent: #7eb49f;
+  --td-color-accent-hover: #96c4b2;
+  --td-color-accent-soft: #213a31;
+  --td-color-danger: #df847d;
+  --td-color-danger-hover: #eba19b;
+  --td-color-danger-soft: #412724;
+  --td-color-warning: #d5a75c;
+  --td-color-warning-soft: #3d321f;
+  --td-color-success: #72b88e;
+  --td-color-success-soft: #21372b;
+  --td-color-info: #82acd4;
+  --td-color-info-soft: #233443;
+  --td-color-focus: #77a8ff;
+
+  --td-shadow-1: 0 1px 2px rgba(0, 0, 0, 0.25), 0 6px 18px rgba(0, 0, 0, 0.18);
+  --td-shadow-2: 0 16px 44px rgba(0, 0, 0, 0.38);
+}

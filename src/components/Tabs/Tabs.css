@@ -1,0 +1,8 @@
+@layer td-components {
+  .td-tabs { width: 100%; }
+  .td-tabs__list { display: flex; gap: 2px; padding: 3px; width: fit-content; max-width: 100%; overflow-x: auto; border: 1px solid var(--td-color-border); border-radius: var(--td-radius-md); background: var(--td-color-surface-subtle); }
+  .td-tabs__trigger { appearance: none; border: 0; border-radius: 7px; background: transparent; color: var(--td-color-text-muted); min-height: 32px; padding: 0 11px; font-size: 13px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+  .td-tabs__trigger[aria-selected='true'] { background: var(--td-color-surface); color: var(--td-color-text); box-shadow: var(--td-shadow-1); }
+  .td-tabs__trigger:disabled { opacity: .45; cursor: not-allowed; }
+  .td-tabs__panel { padding-top: var(--td-space-5); outline: none; }
+}

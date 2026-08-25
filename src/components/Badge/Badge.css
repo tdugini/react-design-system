@@ -1,0 +1,23 @@
+@layer td-components {
+  .td-badge {
+    --badge-bg: var(--td-color-surface-subtle);
+    --badge-fg: var(--td-color-text-muted);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 22px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: var(--badge-bg);
+    color: var(--badge-fg);
+    font-size: 12px;
+    line-height: 1.25;
+    font-weight: 650;
+  }
+
+  .td-badge--success { --badge-bg: var(--td-color-success-soft); --badge-fg: var(--td-color-success); }
+  .td-badge--warning { --badge-bg: var(--td-color-warning-soft); --badge-fg: var(--td-color-warning); }
+  .td-badge--danger { --badge-bg: var(--td-color-danger-soft); --badge-fg: var(--td-color-danger); }
+  .td-badge--info { --badge-bg: var(--td-color-info-soft); --badge-fg: var(--td-color-info); }
+  .td-badge__dot { width: 6px; height: 6px; border-radius: 999px; background: currentColor; }
+}

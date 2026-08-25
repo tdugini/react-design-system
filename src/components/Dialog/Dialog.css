@@ -1,0 +1,14 @@
+@layer td-components {
+  .td-dialog { width: min(520px, calc(100vw - 32px)); max-width: none; max-height: calc(100dvh - 32px); margin: auto; padding: 0; border: 0; border-radius: var(--td-radius-lg); background: transparent; color: var(--td-color-text); overflow: visible; }
+  .td-dialog::backdrop { background: rgba(15, 15, 14, .56); backdrop-filter: blur(2px); }
+  .td-dialog[open] { animation: td-dialog-in var(--td-duration-base) var(--td-ease); }
+  .td-dialog__surface { overflow: hidden; border: 1px solid var(--td-color-border); border-radius: inherit; background: var(--td-color-surface-raised); box-shadow: var(--td-shadow-2); }
+  .td-dialog__header { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; padding: 22px 22px 16px; }
+  .td-dialog__title { margin: 0; font-size: 18px; line-height: 1.3; letter-spacing: -.02em; }
+  .td-dialog__description { margin: 5px 0 0; color: var(--td-color-text-muted); font-size: 13px; }
+  .td-dialog__close { appearance: none; border: 0; border-radius: var(--td-radius-sm); width: 30px; height: 30px; background: transparent; color: var(--td-color-text-muted); font-size: 22px; line-height: 1; cursor: pointer; }
+  .td-dialog__close:hover { background: var(--td-color-surface-subtle); color: var(--td-color-text); }
+  .td-dialog__body { padding: 0 22px 22px; }
+  .td-dialog__footer { display: flex; justify-content: flex-end; gap: 8px; padding: 14px 22px; border-top: 1px solid var(--td-color-border); background: var(--td-color-surface-subtle); }
+  @keyframes td-dialog-in { from { opacity: 0; transform: translateY(6px) scale(.99); } }
+}
