@@ -139,3 +139,9 @@ The next useful additions are deliberately more complex rather than more numerou
 ## Status
 
 This repository is a portfolio design-system exercise, not an attempt to replace established production libraries. Its purpose is to make component architecture, accessibility decisions and frontend craft inspectable in public code.
+
+### Interaction-focused additions
+
+The component set also includes a generic searchable `Combobox<T>` and a provider-driven Toast system. Their stories focus on keyboard behavior, live-region semantics, responsive composition and realistic product states rather than visual variants alone.
+
+Storybook includes complete product-pattern examples so the system can be evaluated as a working interface, not only as isolated primitives.

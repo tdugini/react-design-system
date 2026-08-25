@@ -72,3 +72,17 @@ Automated checks do not replace keyboard and screen-reader review, especially fo
 - no theme provider required to render a button.
 
 The absence of an abstraction is a design decision too.
+
+## Interaction primitives
+
+### Combobox
+
+`Combobox<T>` keeps option identity and presentation separate through `getOptionValue` and `getOptionLabel`. The component owns disclosure, filtering and keyboard navigation while allowing product code to own the selected value. It follows the ARIA combobox/listbox relationship instead of simulating a native select with generic divs.
+
+### Toasts
+
+Transient feedback is exposed as an imperative `toast()` call through a provider because notifications are usually triggered by async product events rather than rendered inline. The provider bounds the queue, keeps dismissal centralized and uses `status`/`alert` semantics based on tone. It deliberately does not introduce a global singleton or external event bus.
+
+## Storybook as a workshop
+
+Storybook is treated as the product surface for the system rather than a screenshot gallery. Component stories cover behavior and state, while pattern stories demonstrate composition and responsive layout without introducing domain-specific abstractions into the library itself.
