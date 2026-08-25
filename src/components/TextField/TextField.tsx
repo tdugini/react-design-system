@@ -2,7 +2,7 @@ import { forwardRef, useId, type InputHTMLAttributes, type ReactNode } from 'rea
 import { cx } from '../../utils/cx';
 import './TextField.css';
 
-export interface TextFieldProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
+export interface TextFieldProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size' | 'prefix'> {
   label: string;
   hint?: string;
   error?: string;
