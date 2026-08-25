@@ -5,7 +5,6 @@ on:
     branches:
       - feature/initial-design-system
     paths:
-      - '.bootstrap/**'
       - '.github/workflows/bootstrap.yml'
 
 permissions:
@@ -16,14 +15,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           ref: feature/initial-design-system
           fetch-depth: 0
 
       - name: Materialize scaffold
         run: |
-          base64 --decode .bootstrap/scaffold.tar.gz.b64 > "$RUNNER_TEMP/scaffold.tar.gz"
+          cat .bootstrap/part-* > "$RUNNER_TEMP/scaffold.tar.gz.b64"
+          base64 --decode "$RUNNER_TEMP/scaffold.tar.gz.b64" > "$RUNNER_TEMP/scaffold.tar.gz"
+          echo "fc1675630eecd60559cf3fca7a487473618e54bbcf3b7294a251f47d1587d9a6  $RUNNER_TEMP/scaffold.tar.gz" | sha256sum -c -
           tar -xzf "$RUNNER_TEMP/scaffold.tar.gz" -C .
           rm -rf .bootstrap
           rm -f .github/workflows/bootstrap.yml
