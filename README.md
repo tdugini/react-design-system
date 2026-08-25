@@ -4,6 +4,8 @@ A small React design system built to demonstrate production-oriented component e
 
 **React · TypeScript · Storybook · Vitest · semantic CSS tokens · accessibility-first interaction**
 
+**Live Storybook:** https://tdugini.github.io/react-design-system/
+
 ## Why this exists
 
 Most portfolio UI repositories optimize for screenshots. TD/UI optimizes for the questions that appear after the screenshot:
@@ -30,25 +32,32 @@ The result is intentionally restrained. Visual hierarchy comes from type, spacin
 | `Dialog` | native `<dialog>` focus behavior with controlled React state |
 | `Skeleton` | reduced-motion-aware loading placeholder |
 | `DataTable<T>` | typed columns, sortable headers and generic row models |
+| `Combobox<T>` | searchable generic data, keyboard navigation and listbox semantics |
+| `ToastProvider` | queued feedback, semantic tones, actions and live-region behavior |
 
 ## Storybook
 
 Storybook is the primary workshop for the system. It contains:
 
 - a custom overview instead of the default starter screen;
-- foundation/token reference pages;
+- foundation, token and accessibility reference pages;
 - interactive component controls;
 - state-specific stories;
 - light and dark theme switching;
 - axe-powered accessibility checks through `@storybook/addon-a11y`;
-- component API documentation through autodocs.
+- component API documentation through autodocs;
+- realistic product-pattern stories that compose multiple primitives.
+
+Run it locally with:
 
 ```bash
-npm install
+npm ci
 npm run storybook
 ```
 
 Storybook runs on `http://localhost:6006`.
+
+The static Storybook build is also deployed from `main` to GitHub Pages.
 
 ## Verification
 
@@ -65,7 +74,7 @@ Or run the complete local gate:
 npm run verify
 ```
 
-The GitHub Actions workflow repeats the same verification for every pull request.
+The GitHub Actions workflow repeats the same verification for every pull request using the committed npm lockfile.
 
 ## Package usage
 
@@ -114,34 +123,27 @@ Motion is short and functional. The global styles respect `prefers-reduced-motio
 ```text
 src/
 ├── components/        component + CSS + stories + focused tests
-├── stories/           system-level Storybook pages
+├── stories/           foundations and realistic product patterns
 ├── styles/            semantic tokens and global baseline
 ├── utils/             framework-agnostic helpers
 └── index.ts           public package boundary
 
-.storybook/            workshop configuration
-.github/workflows/     CI verification
+.storybook/            workshop configuration and custom manager theme
+.github/workflows/     verification and Pages deployment
 ```
 
 See [`ARCHITECTURE.md`](./ARCHITECTURE.md) for component rules and engineering trade-offs.
 
 ## Roadmap
 
-The next useful additions are deliberately more complex rather than more numerous:
+Future work is intentionally driven by engineering value rather than component count:
 
-- `Select` / `Combobox` with robust keyboard behavior;
-- `ToastProvider` with polite live-region announcements;
-- form-field composition shared across inputs;
-- responsive table-to-list pattern;
-- visual regression testing;
-- npm package publishing only if the library starts being consumed elsewhere.
+- shared form-field composition across input primitives;
+- responsive table-to-list behavior for narrow product surfaces;
+- automated visual regression testing;
+- package versioning and release notes if the API starts evolving across consumers;
+- npm publishing only if the library starts being consumed outside this repository.
 
 ## Status
 
-This repository is a portfolio design-system exercise, not an attempt to replace established production libraries. Its purpose is to make component architecture, accessibility decisions and frontend craft inspectable in public code.
-
-### Interaction-focused additions
-
-The component set also includes a generic searchable `Combobox<T>` and a provider-driven Toast system. Their stories focus on keyboard behavior, live-region semantics, responsive composition and realistic product states rather than visual variants alone.
-
-Storybook includes complete product-pattern examples so the system can be evaluated as a working interface, not only as isolated primitives.
+This repository is a portfolio design-system exercise, not an attempt to replace established production libraries. Its purpose is to make component architecture, accessibility decisions and frontend craft easy to inspect through both source code and a live Storybook workshop.
