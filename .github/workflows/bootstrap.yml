@@ -27,7 +27,7 @@ jobs:
           echo "fc1675630eecd60559cf3fca7a487473618e54bbcf3b7294a251f47d1587d9a6  $RUNNER_TEMP/scaffold.tar.gz" | sha256sum -c -
           tar -xzf "$RUNNER_TEMP/scaffold.tar.gz" -C .
           rm -rf .bootstrap
-          rm -f .github/workflows/bootstrap.yml
+          rm -f .github/workflows/ci.yml
 
       - name: Commit scaffold
         run: |
